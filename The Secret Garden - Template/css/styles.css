@@ -1,8 +1,8 @@
 html,
 body {
     height: 100%;
+    cursor: none;
 }
-
 
 #butterfly {
     height: 200px;
@@ -31,7 +31,7 @@ body {
     width: auto;
     position: absolute;
     pointer-events: none;
-
+    transition: transform 0.6s ease;
 }
 
 .apple {

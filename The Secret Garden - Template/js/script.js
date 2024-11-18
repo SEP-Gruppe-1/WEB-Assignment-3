@@ -40,3 +40,34 @@ $(document).ready(function(){
       });
   }
 });
+
+// Sommerfulg næt flip
+$(document).ready(function () {
+    let lastMouseX = 0;
+    let isFlipped = false;
+
+    $("body").mousemove(function (e) {
+        const currentMouseX = e.pageX;
+        if (currentMouseX > lastMouseX && isFlipped) {
+            $("#net").css("transform", "scaleX(-1)");
+            isFlipped = false;
+        } else if (currentMouseX < lastMouseX && !isFlipped) {
+            $("#net").css("transform", "scaleX(1)");
+            isFlipped = true;
+        }
+        lastMouseX = currentMouseX;
+    });
+});
+
+// Sommerfulg net mus traking 
+$(document).ready(function(){
+    $(document).mousemove(function(event){
+        let mouseX = event.pageX;
+        let mouseY = event.pageY;
+  
+        $("#net").css({
+            left: mouseX - 25 + "px",
+            top: mouseY - 25 + "px"
+        });
+    });
+  });
