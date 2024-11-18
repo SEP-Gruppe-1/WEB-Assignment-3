@@ -15,20 +15,21 @@ body {
     position: fixed;
     bottom: 20%;
     left: 40%;
-    transition: transform 0.6s ease;
-    
 }
-
-
 .waterdrop {
-    width: 20px;
-	position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+    position: absolute;
+    display: none; 
 }
 
 #net {
     height: 600px;
     width: auto;
     position: absolute;
+    pointer-events: none;
 
 }
 
