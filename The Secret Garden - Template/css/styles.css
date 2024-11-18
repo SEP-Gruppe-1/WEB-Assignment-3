@@ -15,7 +15,8 @@ body {
     position: fixed;
     bottom: 20%;
     left: 40%;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
+    
 }
 
 
