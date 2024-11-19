@@ -1,8 +1,8 @@
 html,
 body {
     height: 100%;
+    cursor: none;
 }
-
 
 #butterfly {
     height: 200px;
@@ -33,7 +33,7 @@ body {
     width: auto;
     position: absolute;
     pointer-events: none;
-
+    transition: transform 0.6s ease;
 }
 
 .apple {
@@ -65,6 +65,14 @@ body {
     background-repeat: repeat-x;
     background-position: bottom;
     overflow: hidden;
+}
+
+.watercan {
+    width: 200px;
+    height: auto;
+    position: relative; 
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .watercan {

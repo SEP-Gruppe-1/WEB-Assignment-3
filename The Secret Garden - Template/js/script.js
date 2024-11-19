@@ -15,6 +15,22 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    let rotation = 0;
+    let toggle = true;
+
+    $("#wateringcan").on("click", function (){
+        if (toggle){
+            rotation -= 45;
+        }
+        else{
+            rotation += 45;
+        }
+        $(this).css("transform", `rotate(${rotation}deg)`);
+        toggle = !toggle;
+    })
+});
+
+$(document).ready(function(){
     let isWatering = false;
     let animationIds = [];
 
@@ -53,8 +69,6 @@ $(document).ready(function(){
     }
 });
 
-
-  
 
 
 
