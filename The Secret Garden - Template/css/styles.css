@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    cursor: none;
+    
 }
 
 #butterfly {
@@ -40,6 +40,7 @@ body {
     height: 50px;
     width: auto;
     position: absolute;
+    z-index: 1;
 }
 
 #tree {
@@ -55,7 +56,11 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20%;
+    z-index: 0;
+}
 
+#basketfront {
+    z-index: 2;
 }
 
 

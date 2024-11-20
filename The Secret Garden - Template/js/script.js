@@ -1,25 +1,25 @@
 // Sommerfulg net mus traking 
-$(document).ready(function(){
-    $(document).mousemove(function(event){
+$(document).ready(function () {
+    $(document).mousemove(function (event) {
         let mouseX = event.pageX;
         let mouseY = event.pageY;
-  
+
         $("#net").css({
             left: mouseX - 25 + "px",
             top: mouseY - 25 + "px"
         });
     });
-  });
+});
 
-$(document).ready(function(){
+$(document).ready(function () {
     let rotation = 0;
     let toggle = true;
 
-    $("#wateringcan").on("click", function (){
-        if (toggle){
+    $("#wateringcan").on("click", function () {
+        if (toggle) {
             rotation -= 45;
         }
-        else{
+        else {
             rotation += 45;
         }
         $(this).css("transform", `rotate(${rotation}deg)`);
@@ -27,15 +27,15 @@ $(document).ready(function(){
     })
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     let rotation = 0;
     let toggle = true;
 
-    $("#wateringcan").on("click", function (){
-        if (toggle){
+    $("#wateringcan").on("click", function () {
+        if (toggle) {
             rotation -= 45;
         }
-        else{
+        else {
             rotation += 45;
         }
         $(this).css("transform", `rotate(${rotation}deg)`);
@@ -43,12 +43,12 @@ $(document).ready(function(){
     })
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     let isWatering = false;
     let animationIds = [];
 
-    
-    $("#watercan").click(function() {
+
+    $("#watercan").click(function () {
         if (isWatering) {
             stopWatering();
         } else {
@@ -57,26 +57,26 @@ $(document).ready(function(){
     });
 
     function startWatering() {
-        isWatering = true; 
-        $(".waterdrop").show(); 
-        $(".waterdrop").each(function(index, drop) {
+        isWatering = true;
+        $(".waterdrop").show();
+        $(".waterdrop").each(function (index, drop) {
             animationIds[index] = animateDrop($(drop));
         });
     }
 
     function stopWatering() {
-        isWatering = false; 
-        $(".waterdrop").stop(true, false).hide(); 
-        animationIds = []; 
+        isWatering = false;
+        $(".waterdrop").stop(true, false).hide();
+        animationIds = [];
     }
 
     function animateDrop($drop) {
-        if (!isWatering) return; 
-        let startX = 600 + Math.random() * 10; 
-        let startY = 500; 
+        if (!isWatering) return;
+        let startX = 600 + Math.random() * 10;
+        let startY = 500;
         $drop.css({ left: startX + "px", top: startY + "px" });
 
-        return $drop.animate({ top: "600px" }, 1000, function() {
+        return $drop.animate({ top: "600px" }, 1000, function () {
             if (isWatering) animateDrop($drop);
         });
     }
@@ -84,15 +84,15 @@ $(document).ready(function(){
 
 
 // Putter de tre æbler i træet når siden indlæses
-$(document).ready(function(){
+$(document).ready(function () {
     let tree = $('#tree');
     let treeOffset = tree.offset();
     let treeWidth = tree.width();
     let treeHeight = tree.height();
 
-    function randomizePosition(){
+    function randomizePosition() {
         let randomX = Math.floor(Math.random() * treeWidth);
-        let randomY = Math.floor(Math.random() * (treeHeight/2));
+        let randomY = Math.floor(Math.random() * (treeHeight / 2));
 
         return {
             left: randomX + treeOffset.left,
@@ -100,7 +100,7 @@ $(document).ready(function(){
         };
     }
 
-    $('#apple1, #apple2, #apple3').each(function() {
+    $('#apple1, #apple2, #apple3').each(function () {
         let position = randomizePosition();
         $(this).css({
             position: 'absolute',
@@ -110,7 +110,7 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     const $image = $('#movingImage');
     let speed = 1000;
     function calculateDistance(x1, y1, x2, y2) {
@@ -130,28 +130,28 @@ $(document).ready(function() {
             left: newLeft,
             top: newTop
         }, speed,
-         moveRandomly
-        ); 
+            moveRandomly
+        );
     }
 
 
 
-$(document).on('mousemove', function (event) {
-    const imageOffset = $image.offset();
-    const imageCenterX = imageOffset.left + $image.width() / 2;
-    const imageCenterY = imageOffset.top + $image.height() / 2;
+    $(document).on('mousemove', function (event) {
+        const imageOffset = $image.offset();
+        const imageCenterX = imageOffset.left + $image.width() / 2;
+        const imageCenterY = imageOffset.top + $image.height() / 2;
 
-    const distance = calculateDistance(event.pageX, event.pageY, imageCenterX, imageCenterY);
-    if (distance < 200) {
-        speed = 300; 
-    } else if (distance < 400) {
-        speed = 600; 
-    } else {
-        speed = 1000; 
-    }
-});
+        const distance = calculateDistance(event.pageX, event.pageY, imageCenterX, imageCenterY);
+        if (distance < 200) {
+            speed = 300;
+        } else if (distance < 400) {
+            speed = 600;
+        } else {
+            speed = 1000;
+        }
+    });
 
-moveRandomly();
+    moveRandomly();
 });
 
 // Sommerfulg næt flip
@@ -172,5 +172,18 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('.apple').click(function () {
+        let appleOffset = $(this).offset();
+        let appleWidth = $(this).width();
+        let basket = $('.basket');
+        let basketOffset = basket.offset();
+        let basketHeight = basket.height();
 
+        $('.basket').animate({ left: (appleOffset.left - appleWidth) });
 
+        $(this).animate({ top: (basketOffset.top + basketHeight * 0.75) }, 'slow', function(){
+            $(this).css('opacity', '0');
+        });
+    });
+});
