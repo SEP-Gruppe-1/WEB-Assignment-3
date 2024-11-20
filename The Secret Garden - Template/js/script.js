@@ -146,7 +146,7 @@ $(document).ready(function(){
     });
   });
 
-$(document).ready(function(){
+  $(document).ready(function(){
     let isWatering = false;
     let animationIds = [];
 
@@ -197,9 +197,9 @@ $(document).ready(function(){
 
       
       $drop.animate({ top: "+=200px" }, 1000, function () {
-            if (isWatering) animateDrop($drop);
-        });
-    }
+          if (isWatering) animateDrop($drop);
+      });
+  }
 });
 
 
