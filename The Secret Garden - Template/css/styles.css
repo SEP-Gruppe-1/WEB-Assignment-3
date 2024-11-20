@@ -1,8 +1,8 @@
 html,
 body {
     height: 100%;
+    cursor: none;
 }
-
 
 #butterfly {
     height: 200px;
@@ -15,6 +15,7 @@ body {
     position: fixed;
     bottom: 20%;
     left: 40%;
+    transition: transform 0.6s ease;
 }
 .waterdrop {
     width: 10px;
@@ -22,7 +23,9 @@ body {
     border-radius: 50%;
     background-color: blue;
     position: absolute;
-    display: none; 
+    display: none;
+    bottom: 20%;
+    left: 40%;
 }
 
 #net {
@@ -30,7 +33,7 @@ body {
     width: auto;
     position: absolute;
     pointer-events: none;
-
+    transition: transform 0.6s ease;
 }
 
 .apple {
@@ -63,4 +66,20 @@ body {
     background-repeat: repeat-x;
     background-position: bottom;
     overflow: hidden;
+}
+
+.watercan {
+    width: 200px;
+    height: auto;
+    position: relative; 
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.watercan {
+    width: 100px;
+    height: 100px;
+    position: relative; /* Gør dråber relative til vandkanden */
+    border-radius: 10px;
+    cursor: pointer;
 }
