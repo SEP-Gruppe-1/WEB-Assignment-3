@@ -1,3 +1,16 @@
+// Sommerfulg net mus traking 
+$(document).ready(function(){
+    $(document).mousemove(function(event){
+        let mouseX = event.pageX;
+        let mouseY = event.pageY;
+  
+        $("#net").css({
+            left: mouseX - 25 + "px",
+            top: mouseY - 25 + "px"
+        });
+    });
+  });
+
 $(document).ready(function(){
     let rotation = 0;
     let toggle = true;
@@ -159,16 +172,5 @@ $(document).ready(function () {
     });
 });
 
-// Sommerfulg net mus traking 
-$(document).ready(function(){
-    $(document).mousemove(function(event){
-        let mouseX = event.pageX;
-        let mouseY = event.pageY;
-  
-        $("#net").css({
-            left: mouseX - 25 + "px",
-            top: mouseY - 25 + "px"
-        });
-    });
-  });
+
 
