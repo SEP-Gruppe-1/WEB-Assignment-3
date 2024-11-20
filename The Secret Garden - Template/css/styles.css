@@ -41,6 +41,7 @@ body {
     width: auto;
     position: absolute;
     z-index: 1;
+    cursor: pointer;
 }
 
 #tree {
