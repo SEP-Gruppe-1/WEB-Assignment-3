@@ -75,10 +75,3 @@ body {
     cursor: pointer;
 }
 
-.watercan {
-    width: 100px;
-    height: 100px;
-    position: relative; /* Gør dråber relative til vandkanden */
-    border-radius: 10px;
-    cursor: pointer;
-}
